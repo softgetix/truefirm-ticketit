@@ -1,6 +1,6 @@
 <?php
-use Illuminate\Support\Facades\Session;
-use Auth;
+//use Illuminate\Support\Facades\Session;
+//use Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
