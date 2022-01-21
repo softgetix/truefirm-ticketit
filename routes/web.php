@@ -1,5 +1,6 @@
 <?php
-
+use Illuminate\Support\Facades\Session;
+use Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,7 +14,11 @@
 
 Route::get('/', function () {
 	if(Auth::guest()){
+		//$user = new \App\User;
+		//auth()->login($user->first());
+    // return redirect()->to('/');
     	return view('welcome');
+
 	}else{
 		return redirect('/home');
 	}

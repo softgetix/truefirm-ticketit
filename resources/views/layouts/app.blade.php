@@ -15,13 +15,37 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+     <link rel="stylesheet" type="text/css" href="{{ asset('main_assets/css/style.css') }}">
+   
+   <link rel="stylesheet" type="text/css" href="{{ asset('main_assets/css/searchpage.css') }}">
+  
+   <link rel="stylesheet" type="text/css" href="{{ asset('main_assets/css/blog.css') }}">
+   <link rel="stylesheet" type="text/css" href="{{ asset('main_assets/css/bootstrap.min.css') }}">
+   <link href="{{ asset('main_assets/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  
+  <link rel='stylesheet' id='slick-css-css' href="{{ asset('main_assets/css/slick.css') }}">
+   
+  <link rel="stylesheet" type="text/css" href="{{ asset('main_assets/css/yearpicker.css') }}">
+   
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.8/css/intlTelInput.css" />
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/slicknav.min.css">
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/jquery.slicknav.min.js"></script> 
+  <script src="{{ asset('main_assets/js/popper.min.js')}}"></script>
+  <script src="{{ asset('main_assets/js/bootstrap.min.js')}}"></script>
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ config('app.name', 'Support') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -68,7 +92,89 @@
                 </div>
             </div>
         </nav>
+        <section class="nav-block-area">
+  <!-- //============================================
+           Header Start 
+   =============================================// -->
+   <!-- Mobile Menu -->
+  <div class="mobile-menu-container">
+    <div class="mobile-menu-close"></div>
+    <div id="mobile-menu-wrap"></div>
+  </div>
+  <!-- Mobile Menu End -->
+  <header class="header header-sticky">
+    <!--// Main header -->
+    <div class="main-header">
+      <div class="container">
+      <!--   <nav class="navbar navbar-expand-lg p-0 main-navigation"> -->
+           <nav class="navbar p-0 main-navigation">
+          <!--  Show this only on mobile to medium screens  -->
+          <a class="navbar-brand" href="{{url('/')}}"> <img src="{{ asset('main_assets/images/truefirms_logo.png') }}" alt="TrueFirms" class="logo-blue" width="80"> </a>
+          <button class="mobile-menu-trigger"> <span></span> <span></span> <span></span> </button>
+          <!--  Use flexbox utility classes to change how the child elements are justified  -->
+          <div class="header-navigation-area justify-content-between new_head">
+            <ul id="main-menu" class="menu m-0">
+             
+              
+             
+          
+        <!-- <li><a href="{{url('company-search')}}">Find firms</a></li>
+             <li><a href="{{url('software-search')}}">Find software</a></li>-->
 
+             <?php
+                 $check = Auth::user();
+                 $check = Auth::check(); 
+
+                  if($check){
+                    $type = Auth::user()->user_type;
+                  }
+                  else{
+                    $type = 1;
+                  }  
+
+                  if($type != 2 && $type != 3){ ?>  
+ 
+                  <li><a href="{{url('review')}}">Leave a review</a></li>
+
+              <?php  } ?>
+               <!-- <li><a href="{{url('review')}}">Leave a review</a></li> -->
+              <li><a href="{{url('blog')}}">Blog</a></li>
+
+              <?php
+                  $check = Auth::user();
+                  $check = Auth::check(); 
+                  if($check){
+                    $type = Auth::user()->user_type;
+                  }
+                  else{
+                    $type = 1;
+                  }  
+
+                  if($type == 1){ ?>   
+                  
+                <li><a href="{{url('sign-in')}}">SignIn</a></li>
+                <li><a class="login-signup" href="{{ url('pricing-plan') }}">Claim Your Free Listing <span class="excalmetric">!</span></a></li>
+              
+              <?php  } ?>
+            </ul>
+          </div>
+          <?php if($check){ ?>
+           <div class="right-navigation-area">
+            <ul id="right-menu" class="menu m-0">
+               <li><a class="menu-notifications" href="#"><i class="fa fa-bell-o"></i></a></li>
+                <li><a class="menu-user" href="{{url('dashboard')}}"><?php echo ucfirst(substr(Auth::user()->name,0,1)); ?></a></li>
+            </ul>
+          </div>
+          <?php } ?>      
+        </nav>
+      </div>
+    </div>
+    <!--// Main End -->
+  </header>
+  <!-- //============================================
+           Header End
+  =============================================// -->
+</section>
         <main class="py-4">
             @yield('auth_content')
             @yield('content')
