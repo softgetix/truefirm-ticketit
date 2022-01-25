@@ -16,8 +16,8 @@ Route::get('/', function () {
 	if(Auth::guest()){
 		//$user = new \App\User;
 		//auth()->login($user->first());
-    // return redirect()->to('/');
-    	return view('welcome');
+        return redirect()->to('/login');
+    	//return view('welcome');
 
 	}else{
 		return redirect('/home');
@@ -27,7 +27,7 @@ Route::get('/', function () {
 
 
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::get('/home', function(){
 	return redirect(action('\Kordy\Ticketit\Controllers\TicketsController@index'));

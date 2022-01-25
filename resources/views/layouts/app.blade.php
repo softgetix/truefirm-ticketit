@@ -45,7 +45,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Support') }}
+                    {{ config('app.name', 'TrueFirms') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -116,30 +116,6 @@
             <ul id="main-menu" class="menu m-0">
              
               
-             
-          
-        <!-- <li><a href="{{url('company-search')}}">Find firms</a></li>
-             <li><a href="{{url('software-search')}}">Find software</a></li>-->
-
-             <?php
-                 $check = Auth::user();
-                 $check = Auth::check(); 
-
-                  if($check){
-                    $type = Auth::user()->user_type;
-                  }
-                  else{
-                    $type = 1;
-                  }  
-
-                  if($type != 2 && $type != 3){ ?>  
- 
-                  <li><a href="{{url('review')}}">Leave a review</a></li>
-
-              <?php  } ?>
-               <!-- <li><a href="{{url('review')}}">Leave a review</a></li> -->
-              <li><a href="{{url('blog')}}">Blog</a></li>
-
               <?php
                   $check = Auth::user();
                   $check = Auth::check(); 
@@ -150,19 +126,27 @@
                     $type = 1;
                   }  
 
-                  if($type == 1){ ?>   
+                  ?>   
                   
-                <li><a href="{{url('sign-in')}}">SignIn</a></li>
-                <li><a class="login-signup" href="{{ url('pricing-plan') }}">Claim Your Free Listing <span class="excalmetric">!</span></a></li>
               
-              <?php  } ?>
             </ul>
           </div>
           <?php if($check){ ?>
            <div class="right-navigation-area">
             <ul id="right-menu" class="menu m-0">
-               <li><a class="menu-notifications" href="#"><i class="fa fa-bell-o"></i></a></li>
-                <li><a class="menu-user" href="{{url('dashboard')}}"><?php echo ucfirst(substr(Auth::user()->name,0,1)); ?></a></li>
+                <li class="nav-item dropdown"><a class="menu-user" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre><?php echo ucfirst(substr(Auth::user()->name,0,1)); ?></a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                     </div>
+                </li>
+                
             </ul>
           </div>
           <?php } ?>      
