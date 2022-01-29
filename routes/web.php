@@ -1,6 +1,5 @@
 <?php
-//use Illuminate\Support\Facades\Session;
-//use Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,11 +13,7 @@
 
 Route::get('/', function () {
 	if(Auth::guest()){
-		//$user = new \App\User;
-		//auth()->login($user->first());
-        return redirect()->to('/login');
-    	//return view('welcome');
-
+    	return view('welcome');
 	}else{
 		return redirect('/home');
 	}
@@ -27,7 +22,7 @@ Route::get('/', function () {
 
 
 
-Auth::routes(['register' => false]);
+Auth::routes();
 
 Route::get('/home', function(){
 	return redirect(action('\Kordy\Ticketit\Controllers\TicketsController@index'));
