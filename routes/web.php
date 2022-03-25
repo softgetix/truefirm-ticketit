@@ -13,7 +13,8 @@
 
 Route::get('/', function () {
 	if(Auth::guest()){
-    	return view('welcome');
+    	//return view('welcome');
+    	return redirect('/login');
 	}else{
 		return redirect('/home');
 	}
@@ -22,7 +23,7 @@ Route::get('/', function () {
 
 
 
-Auth::routes();
+Auth::routes(['regsiter'=>false]);
 
 Route::get('/home', function(){
 	return redirect(action('\Kordy\Ticketit\Controllers\TicketsController@index'));

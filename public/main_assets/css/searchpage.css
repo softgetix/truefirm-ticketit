@@ -1,0 +1,335 @@
+/*******************************searchpage Start ***** start**************************/
+@charset "UTF-8";
+
+.dropdown-search-block {
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 20%);
+    background-color: #fff;
+    padding: 30px 20px 15px;
+}
+
+.MultiCheckBox {
+    border: 1px solid #e2e2e2;
+    padding: 8px 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: inherit !important;
+    margin: 5px 0;
+}
+
+.MultiCheckBox .k-icon {
+    font-size: 15px;
+    float: right;
+    font-weight: bolder;
+    margin-top: -5px;
+    margin-right: 15px;
+    height: 10px;
+    width: 10px;
+    color: #787878;
+}
+
+.MultiCheckBoxDetail {
+    display: none;
+    position: absolute;
+    border: 1px solid #e2e2e2;
+    overflow-y: hidden;
+    z-index: 999;
+    background: #fff !important;
+    font-size: 14px;
+}
+
+.MultiCheckBoxDetailBody {
+    overflow-y: scroll;
+    padding: 5px;
+}
+
+.MultiCheckBoxDetail .cont {
+    clear: both;
+    overflow: hidden;
+    padding: 2px;
+}
+
+.MultiCheckBoxDetail .cont:hover {
+    background-color: #f2726485;
+    color: #fff;
+}
+
+.MultiCheckBoxDetailBody>div>div {
+    float: left;
+    cursor: pointer;
+}
+#form1 .MultiCheckBoxDetailBody>div>div {
+    display: contents;
+}
+.MultiCheckBoxDetail>div>div:nth-child(1) {  }
+
+.MultiCheckBoxDetailHeader {
+    overflow: hidden;
+    position: relative;
+    height: 28px;
+    background-color: #3d3d3d;
+}
+
+.MultiCheckBoxDetailHeader>input {
+    position: absolute;
+    top: 4px;
+    left: 3px;
+}
+
+.MultiCheckBoxDetailHeader>div {
+    position: absolute;
+    top: 5px;
+    left: 24px;
+    color: #fff;
+}
+
+.MultiCheckBoxDetailBody::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+.MultiCheckBoxDetailBody::-webkit-scrollbar
+{
+    width: 6px;
+    background-color: #F5F5F5;
+}
+
+.MultiCheckBoxDetailBody::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #f2726485;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    /*z-index: 2;*/
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+    right: 15px;
+}
+
+.form-group.has-search input {
+    margin: 5px 0;
+}
+
+.apply-button {
+    font-weight: 700;
+    color: #fff !important;
+    border-radius: 45px;
+    position: relative;
+    margin: 5px;
+    padding: 16px 21px !important;
+    line-height: 0;
+    background: #f27264;
+    border: 2px solid #f27264;
+    width: 100%;
+}
+.apply-button:hover {
+    color: #fff;
+    background: #f27264bf;
+    border-radius: 4px;
+    transition-delay: 0.1s;
+}
+
+.dropdownDivSelect {
+    border: 1px solid #e2e2e2;
+    padding: 8px 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #fff;
+    width: 100%;
+    margin: 5px 0;
+}
+.dropdownDivSelect.dropdown-toggle::after {
+    margin-left: 1.255em;
+}
+
+.sortby-dropdown .dropdown-menu {
+    width: 130px;
+    top: 42px;
+    min-width: inherit;
+}
+
+.sortby-dropdown .dropdown{
+    background: #f27264bf;
+}
+
+.sortby-dropdown .dropdown-menu .dropdown-item:hover {
+    color: #fff;
+    background: #f2726485;
+}
+
+.mulinput {
+    height: 20px;
+    width: 20px !important; 
+    margin-right: 10px;
+}
+
+.MultiCheckBoxDetailHeader>div {
+    position: absolute;
+    top: 8px;
+    left: 41px;
+    color: #fff;
+}
+
+.MultiCheckBoxDetailHeader {
+    overflow: hidden;
+    position: relative;
+    height: 37px;
+    background-color: #f27264;
+}
+
+.service-provider {
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 24px;
+    margin-top: 40px;
+    text-align: left;
+    box-shadow: 0px 1px 12px rgb(0 0 0 / 20%);
+}
+
+.service-entity .company_logo {
+    float: left;
+}
+
+.c_name_head {
+    font-weight: 700;
+    color: #181818;
+    margin-right: 15px;
+}
+
+.profile-tagline {
+    line-height: normal;
+    font-size: 15px;
+    position: relative;
+}
+
+.review-tagline{
+    font-size: 12px;
+    padding-left: 8px;
+    font-weight: bold;
+}
+
+.Cardheader i {
+    color: gold;
+}
+
+.review-conclusion {
+    font-weight: 700;
+    font-size: 19px;
+    padding-top: 7px;
+    padding-bottom: 15px;
+}
+
+.reviewer-info {
+    font-size: 14px;
+}
+
+a.visit-website.linkbtn.list-service-website-visit {
+    font-size: 14px;
+    text-transform: capitalize;
+    border-radius: 21px;
+    font-weight: 800;
+    color: #fff;
+    border: 1px solid #f27264;
+    padding: 10px 0px;
+    text-align: center;
+    background: #f27264;
+    letter-spacing: .025em;
+    text-decoration: none;
+    display: block;
+    margin: 15px;
+}
+a.visit-website.linkbtn.list-service-website-visit:hover{
+     color: #fff;
+    background: #f27264bf;
+    border-radius: 4px;
+    transition-delay: 0.1s;
+    text-decoration: none;
+}
+
+.firms-r .firms-services {
+    padding: 0 0 6px 20px;
+}
+
+.firms-services div {
+    position: relative;
+    margin: 20px 0;
+}
+
+.firms-services .firm-employees::before {
+    content: "Employees";
+}
+
+.firms-services div::before {
+    display: block;
+    height: 19px;
+    width: 100%;
+    color: #757982;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.firms-services .firm-pricing::before {
+    content: "Hourly Rate";
+}
+
+.firms-services .firm-location::before {
+    content: "Locations";
+}
+
+.profile-short-info {
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+
+.bookmark-text {
+    font-size: 12px;
+    padding-right: 20px;
+}
+
+.verifie-icon {
+    color: #ff3d2e;
+    font-size: 11px;
+    padding-bottom: 5px;
+}
+ .border-row{
+    border-top: 0.2px #c8c8c8 dotted;
+}
+
+a.review-name:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.review-name p{
+    font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: #000;
+}
+ .review-name span{
+    font-size:14px;
+    font-weight: 500;
+ }
+ .review-name span i{
+    padding-left: 10px;
+    font-size: 12px;
+    color: red;
+ }
+ .viewmore_link{
+    padding-top: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: right;
+ }
+/*******************************searchpage Start ***** End**************************/
