@@ -3,11 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('page') - {{ config('app.name', 'Ticketit') }}</title>
+      
+         <link rel="icon" type="image/x-icon" href="{{ asset('public/main_assets/images/favicon.png') }}">
 
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -17,6 +19,8 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
         <link rel="stylesheet" type="text/css" href="{{ asset('main_assets/css/style.css') }}">
+
+         <link rel="stylesheet" type="text/css" href="{{ asset('main_assets/css/ticket.css') }}">
        
        <link rel="stylesheet" type="text/css" href="{{ asset('main_assets/css/searchpage.css') }}">
       
@@ -38,6 +42,7 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/jquery.slicknav.min.js"></script> 
       <script src="{{ asset('main_assets/js/popper.min.js')}}"></script>
+      <script src="{{ asset('main_assets/js/bootstrap.min.js')}}"></script>
       <script src="{{ asset('main_assets/js/bootstrap.min.js')}}"></script>
 
 </head>
@@ -71,7 +76,9 @@
             <nav class="navbar p-0 main-navigation">
               <!--  Show this only on mobile to medium screens  -->
               <a class="navbar-brand" href="{{url('/')}}"> <img src="{{ asset('main_assets/images/truefirms_logo.png') }}" alt="TrueFirms" class="logo-blue" width="80"> </a>
-              <button class="mobile-menu-trigger"> <span></span> <span></span> <span></span> </button>
+              <!-- <button class="mobile-menu-trigger"> <span></span> <span></span> <span></span> </button> -->
+
+              
               <!--  Use flexbox utility classes to change how the child elements are justified  -->
               <div class="header-navigation-area justify-content-between new_head">
                 <ul id="main-menu" class="menu m-0">
@@ -90,27 +97,17 @@
 
                       if($type != 2 && $type != 3){ ?>  
      
-                      <li><a href="{{url('review')}}">Leave a review</a></li>
+                      <!-- <li><a href="{{url('review')}}">Leave a review</a></li> -->
 
                   <?php  } ?>
                    <!-- <li><a href="{{url('review')}}">Leave a review</a></li> -->
-                  <li><a href="{{url('blog')}}">Blog</a></li>
-
-                  <?php
-                      $check = Auth::user();
-                      $check = Auth::check(); 
-                      if($check){
-                        $type = Auth::user()->user_type;
-                      }
-                      else{
-                        $type = 1;
-                      }  
-
-                      if($type == 1){ ?>   
-                      
-                    <li><a class="login-signup" href="{{ url('pricing-plan') }}">Claim Your Free Listing <span class="excalmetric">!</span></a></li>
+                   <?php 
+                   $aurl = request()->getHost();;
+                   ?>
+                   
+                  <!-- <li><a href="https://{{ $aurl }}/blog">Blog</a></li> -->
+                  <li><a href="https://{{ $aurl }}"class="login-signup" onclick="window.close();"><i class="fa fa-arrow-left" ></i> Back to Truefirms main site</a></li>
                   
-                  <?php  } ?>
                 </ul>
               </div>
               <?php if($check){ ?>
