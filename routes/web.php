@@ -24,6 +24,7 @@ Route::get('/', function () {
 
 
 Auth::routes(['regsiter'=>false]);
+Auth::routes(['password.reset'=>false]);
 
 Route::get('/home', function(){
 	return redirect(action('\Kordy\Ticketit\Controllers\TicketsController@index'));
