@@ -64,3 +64,14 @@ Stack trace:
 #9 /home/truefirms/public_html/contact-us/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\Foundation\Console\Kernel->bootstrap()
 #10 /home/truefirms/public_html/contact-us/artisan(37): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
 #11 {main} in /home/truefirms/public_html/contact-us/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 11
+[23-May-2022 06:03:29 UTC] PHP Fatal error:  Uncaught Symfony\Component\Console\Exception\RuntimeException: Unable to write output. in phar:///opt/cpanel/composer/bin/composer/vendor/symfony/console/Output/StreamOutput.php:79
+Stack trace:
+#0 phar:///opt/cpanel/composer/bin/composer/vendor/symfony/console/Output/Output.php(164): Symfony\Component\Console\Output\StreamOutput->doWrite('\n', true)
+#1 phar:///opt/cpanel/composer/bin/composer/vendor/symfony/console/Output/Output.php(132): Symfony\Component\Console\Output\Output->write(Array, true, 16)
+#2 phar:///opt/cpanel/composer/bin/composer/vendor/symfony/console/Application.php(641): Symfony\Component\Console\Output\Output->writeln('', 16)
+#3 phar:///opt/cpanel/composer/bin/composer/vendor/symfony/console/Application.php(127): Symfony\Component\Console\Application->renderException(Object(Symfony\Component\Console\Exception\RuntimeException), Object(Symfony\Component\Console\Output\StreamOutput))
+#4 phar:///opt/cpanel/composer/bin/composer/src/Composer/Console/Application.php(128): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 phar:///opt/cpanel/composer/bin/composer/bin/composer(73): Composer\Console\Application->run()
+#6 /opt/cpanel/composer/bin/composer(29): require('phar:///opt/cpa...')
+#7 {main}
+  thrown in phar:///opt/cpanel/composer/bin/composer/vendor/symfony/console/Output/StreamOutput.php on line 79
