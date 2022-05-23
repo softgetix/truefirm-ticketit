@@ -1073,7 +1073,10 @@ return array(
     'Faker\\Provider\\nl_BE\\Payment' => $vendorDir . '/fzaninotto/faker/src/Faker/Provider/nl_BE/Payment.php',
     'Faker\\Provider\\nl_BE\\Person' => $vendorDir . '/fzaninotto/faker/src/Faker/Provider/nl_BE/Person.php',
     'Faker\\Provider\\nl_BE\\PhoneNumber' => $vendorDir . '/fzaninotto/faker/src/Faker/Provider/nl_BE/PhoneNumber.php',
+<<<<<<< HEAD
     'Faker\\Provider\\nl_BE\\Text' => $vendorDir . '/fzaninotto/faker/src/Faker/Provider/nl_BE/Text.php',
+=======
+>>>>>>> c9abe8bcc56c2a49fa5028ac123fd74530e4593f
     'Faker\\Provider\\nl_NL\\Address' => $vendorDir . '/fzaninotto/faker/src/Faker/Provider/nl_NL/Address.php',
     'Faker\\Provider\\nl_NL\\Color' => $vendorDir . '/fzaninotto/faker/src/Faker/Provider/nl_NL/Color.php',
     'Faker\\Provider\\nl_NL\\Company' => $vendorDir . '/fzaninotto/faker/src/Faker/Provider/nl_NL/Company.php',

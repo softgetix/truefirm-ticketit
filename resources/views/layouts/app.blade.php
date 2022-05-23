@@ -9,7 +9,7 @@
 
     <title>@yield('page') - {{ config('app.name', 'Ticketit') }}</title>
       
-         <link rel="icon" type="image/x-icon" href="{{ asset('public/main_assets/images/favicon.png') }}">
+         <link rel="icon" type="image/x-icon" href="{{ asset('main_assets/images/favicon.png') }}">
 
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
